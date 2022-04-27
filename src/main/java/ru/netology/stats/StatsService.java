@@ -16,8 +16,9 @@ public class StatsService {
 
     public long calcBelowMidlSum(long[] sales) {
         long Month = 0;
+        long i = calcMidlSum(sales); //переменная в которую складываем расчитанную средню сумму
         for (long sale : sales) {
-            if (sale < calcMidlSum(sales)) {
+            if (sale < i) {
                 Month = Month + 1;
             }
         }
@@ -27,8 +28,9 @@ public class StatsService {
 
     public long calcMoreMidlSum(long[] sales) {
         long CountMonth = 0;
+        long i = calcMidlSum(sales); //переменная в которую складываем расчитанную средню сумму
         for (long sale : sales) {
-            if (sale > calcMidlSum(sales)) {
+            if (sale > i) {
                 CountMonth++;
             }
         }
